@@ -1,0 +1,73 @@
+<ion-content [fullscreen]="true" color="">
+
+
+  <!-- Formulario para agregar un nuevo pedido -->
+  <ion-card class="form">
+    <ion-card-header>
+      <ion-card-title>Agregar nuevo pedido</ion-card-title>
+    </ion-card-header>
+
+    <ion-content padding>
+      <h2>¡Bienvenido, {{ nombreUsuario }}!</h2>
+      <p>Nos alegra verte de nuevo.</p>
+    </ion-content>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Modelo</ion-label>
+        <ion-input [(ngModel)]="nuevoPedido.modelo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input [(ngModel)]="nuevoPedido.direccion" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Hora</ion-label>
+        <ion-input [(ngModel)]="nuevoPedido.tiempo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Costo</ion-label>
+        <ion-input [(ngModel)]="nuevoPedido.costo" type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="nuevoPedido.descripcion" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="agregarPedido()">Agregar Pedido</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de pedidos existentes -->
+  <ion-list *ngIf="pedidos.length > 0" lines="none">
+    <ion-list-header>
+      <ion-label>
+        Viajes disponibles
+      </ion-label>
+      <ion-button fill="clear" size="small" color="medium">
+        <ion-text>
+          Mostrar todos
+        </ion-text>
+      </ion-button>
+    </ion-list-header>  
+
+    <ion-item *ngFor="let pedido of pedidos">
+      <ion-label>
+        <h2>Modelo: {{ pedido.modelo }}</h2>
+        <p>Dirección: {{ pedido.direccion }}</p>
+        <p>Hora: {{ pedido.tiempo }}</p>
+        <p>Costo: ${{ pedido.costo }}</p>
+        <p>Descripción: {{ pedido.descripcion }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+ 
+
+</ion-content>
+
+

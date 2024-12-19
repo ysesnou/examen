@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="correo" name="correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="contrasena" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!loginForm.form.valid">Iniciar Sesión</ion-button>
+
+    <!-- Botón "Elige tu rol" largo y centrado -->
+    <div class="long-button-container">
+      <ion-button id="role-button" class="long-button" expand="block">Elige tu rol</ion-button>
+    </div>
+
+    <!-- Popover con las opciones "Conductor" y "Pasajero", que se cerrará al seleccionar -->
+    <ion-popover trigger="role-button" side="bottom" alignment="center">
+      <ng-template>
+        <ion-list>
+          <ion-item button (click)="selectRole('Conductor')">Conductor</ion-item>
+          <ion-item button (click)="selectRole('Pasajero')">Pasajero</ion-item>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+
+    <ion-row>
+      <ion-col>
+        <ion-button fill="outline" routerLink="/recuperar" class="balloon-button">Recuperar Contraseña</ion-button>
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <ion-button fill="outline" routerLink="/register" class="balloon-button">¿No tienes cuenta? Regístrate</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

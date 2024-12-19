@@ -1,0 +1,65 @@
+ion-content {
+    display: flex;
+    justify-content: center;   /* Centrado horizontal */
+    align-items: center;       /* Centrado vertical */
+    height: 100%;              /* Ocupa toda la altura del contenido */
+    background-color: #f8f9fa; /* Color de fondo */
+    --background: url(fondo.jpg) no-repeat center center/cover;
+  }
+  
+  form {
+    width: 100%;               /* Ocupa el 100% del ancho disponible */
+    max-width: 350px;         /* Ancho máximo del formulario */
+    padding: 20px;            /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin: 0 auto;           /* Centrar el formulario horizontalmente */
+    margin-top: 100px;
+    animation: fadeIn 0.5s ease; /* Añadir animación de desvanecimiento */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;  
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;  
+      transform: translateY(0);
+    }
+  }
+  
+  ion-item {
+    margin-bottom: 15px;      /* Espacio entre los elementos del formulario */
+  }
+  
+  ion-label {
+    font-weight: bold; /* Negrita para las etiquetas */
+  }
+  
+  ion-input {
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;      /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo más opaco */
+  }
+  
+  ion-button {
+    margin-top: 20px;         /* Espacio superior para el botón */
+  }
+  
+  .balloon-button {
+    --background: rgba(255, 255, 255, 0.8); /* Fondo blanco transparente */
+    --color: #007bff; /* Color de texto */
+    --border-color: #007bff; /* Color del borde */
+    --border-radius: 20px; /* Esquinas redondeadas */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+    padding: 10px 20px; /* Espaciado interno */
+    transition: transform 0.2s, box-shadow 0.2s; /* Efecto de transformación suave */
+  }
+  
+  .balloon-button:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+  }
+  
